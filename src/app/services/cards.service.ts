@@ -9,7 +9,68 @@ export class CardsService {
   public revertingDelay: number = 1000;
   public numberOfRotates: number = 0;
   public permissionToRotate: BehaviorSubject<boolean>;
+  // public mockData: BehaviorSubject<MemoryCardModel>;
   public mockData: MemoryCardModel[] = [
+    {
+      id: 1,
+      title: 'Card 1',
+      imageURL: 'assets/images/1.jpeg',
+      rotated: false
+    },
+    {
+      id: 2,
+      title: 'Card 2',
+      imageURL: 'assets/images/2.jpeg',
+      rotated: false
+    },
+    {
+      id: 3,
+      title: 'Card 3',
+      imageURL: 'assets/images/3.jpeg',
+      rotated: false
+    },
+    {
+      id: 4,
+      title: 'Card 4',
+      imageURL: 'assets/images/4.jpeg',
+      rotated: false
+    },
+    {
+      id: 5,
+      title: 'Card 5',
+      imageURL: 'assets/images/5.jpeg',
+      rotated: false
+    },
+    {
+      id: 6,
+      title: 'Card 6',
+      imageURL: 'assets/images/6.jpeg',
+      rotated: false
+    },
+    {
+      id: 7,
+      title: 'Card 7',
+      imageURL: 'assets/images/7.jpeg',
+      rotated: false
+    },
+    {
+      id: 8,
+      title: 'Card 8',
+      imageURL: 'assets/images/8.jpeg',
+      rotated: false
+    },
+    {
+      id: 9,
+      title: 'Card 9',
+      imageURL: 'assets/images/9.jpeg',
+      rotated: false
+    },
+    {
+      id: 10,
+      title: 'Card 10',
+      imageURL: 'assets/images/10.jpeg',
+      rotated: false
+    },
     {
       id: 1,
       title: 'Card 1',
@@ -74,6 +135,7 @@ export class CardsService {
 
   constructor() {
     this.permissionToRotate = new BehaviorSubject<boolean>(true);
+    // this.mockData = new BehaviorSubject<boolean>();
   }
 
   public getCards() {
@@ -86,7 +148,6 @@ export class CardsService {
     }
     else if (this.numberOfRotates === 1) {
       this.numberOfRotates += 1;
-      this.revertCardsToDefaultPosition();
     }
   }
 
@@ -94,7 +155,7 @@ export class CardsService {
     return this.permissionToRotate.asObservable();
   }
 
-  private revertCardsToDefaultPosition() {
+  public resetCardsPosition() {
 
     this.numberOfRotates = 0;
     this.permissionToRotate.next(false);
@@ -105,14 +166,17 @@ export class CardsService {
   }
 
   public removeCardsFromDeck(cards: MemoryCardModel[]) {
-    cards.forEach(cardforRemove => {
+    let list: MemoryCardModel[] = cards;
+
+    cards.forEach(removableCard => {
       this.mockData.forEach(cardList => {
-        if (cardforRemove.title === cardList.title) {
-          console.log(cardforRemove.title);
-          console.log(cardList.title);
-          this.mockData = this.mockData.filter(function (e) { return e.title !== cardforRemove.title })
+        if (removableCard.title === cardList.title) {
+          list = this.mockData.filter((e) => { return e.title !== removableCard.title })
+          console.log('list: ', list);
         }
       })
     })
+    this.mockData = list;
+    console.log('this.mockData: ', this.mockData);
   }
 }

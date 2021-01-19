@@ -16,7 +16,8 @@ export class GameComponent implements OnInit {
   ngOnInit(): void {
     this.cardsSercice.getCards().subscribe((result) => {
       if (result) {
-        this.cardList = result
+        this.cardList = result;
+        // console.log(result);
       }
     })
   }
@@ -33,11 +34,13 @@ export class GameComponent implements OnInit {
   }
 
   private compareCards() {
-    if (this.compareCardList[0].title === this.compareCardList[0].title) {
-      this.cardsSercice.removeCardsFromDeck(this.compareCardList)
+    if (this.compareCardList[0].title === this.compareCardList[1].title) {
+      this.cardsSercice.removeCardsFromDeck(this.compareCardList);
+      console.log(this.compareCardList);
     }
     else {
       this.compareCardList = [];
+      this.cardsSercice.resetCardsPosition();
     }
   }
 }
