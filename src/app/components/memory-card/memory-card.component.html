@@ -1,0 +1,10 @@
+<div class="card card-animation" [ngClass]="{ 'card-rotated': isCardRotated}" (click)="rotateCard()">
+    <div class="card__side-front side-front" fxLayout="column">
+        <img src="assets/images/question-mark.jpg" alt="Question Mark" class="card__img img-optimizer">
+    </div>
+
+
+    <div class="card__side-back side-back" fxLayout="column">
+        <img [src]="item.imageURL" alt="Question Mark" class="card__img img-optimizer">
+    </div>
+</div>

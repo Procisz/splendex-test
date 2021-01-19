@@ -1,0 +1,59 @@
+@import "./../../../assets/sass/abstracts/variables";
+@import "./../../../assets/sass/base/animations";
+@import "./../../../assets/sass/base/utilities";
+
+.card {
+    width: 20rem;
+    height: 20rem;
+    border: 1px solid $default-border-color-grey-light;
+    cursor: pointer;
+    border-radius: $default-border-radius;
+    overflow: hidden;
+
+    &__img {
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+/** FUNCTIONALITY - ROTATE CARD - START */
+.card {
+    overflow: hidden;
+    position: relative;
+
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+}
+
+.card-rotated {
+    .card__side-front {
+        transform: rotateY(-180deg);
+        transform-origin: center;
+    }
+
+    .card__side-back {
+        transform: rotateY(0);
+        transform-origin: center;
+    }
+}
+
+.card__side-front,
+.card__side-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: transform .5s cubic-bezier(0.68, -0.6, 0.32, 1.6) !important;
+    overflow: hidden;
+}
+
+.card__side-back {
+    transform: rotateY(180deg);
+    transform-origin: center;
+}
+
+/** FUNCTIONALITY - ROTATE CARD - END */
