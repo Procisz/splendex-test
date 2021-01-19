@@ -1,0 +1,54 @@
+@import "./../abstracts/variables";
+
+.btn-animation {
+
+  /** ---------- :hover ---------- */
+  &:hover {
+    box-shadow: $default-box-shadow-button-hover;
+    /* transform: translateY(-.1rem);*/
+
+    border: 2px solid transparent;
+  }
+
+  &__primary:hover,
+  &__primary--rounded:hover {
+    background-color: $color-primary-darken;
+    color: $color-white;
+  }
+
+  &__secondary:hover,
+  &__secondary--rounded:hover {
+    background-color: $color-secondary-darken;
+    color: $color-white;
+  }
+
+  // &__error:hover,
+  // &__error--rounded:hover {
+  //   background-color: $color-error-darken;
+  //   color: $color-white;
+  // }
+
+
+  /** ---------- :active ---------- */
+  &__primary:active,
+  &__primary--rounded:active,
+  &__secondary:active,
+  &__secondary--rounded:active // &__error:active,
+
+  // &__error--rounded:active
+  // &__disabled:active,
+  // &__disabled--rounded:active 
+    {
+    outline: none;
+    /* transform: translateY(.1rem);*/
+    box-shadow: $default-box-shadow-button-active;
+  }
+}
+
+.card-animation {
+  transition: all $default-transition-duration;
+
+  &:hover {
+    box-shadow: $default-box-shadow-card;
+  }
+}

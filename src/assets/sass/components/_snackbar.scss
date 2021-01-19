@@ -1,0 +1,59 @@
+@import "./../abstracts/variables";
+@import "./../abstracts/mixins";
+
+/** ------------------------------- NOTE --------------------------------
+ * This works only This is for only Material Snackbar
+ * ------------------------------------------------------------------- */
+
+::ng-deep {
+
+   /** ----- General options ----- */
+   .mat-simple-snackbar {
+      font-family: $default-font-family;
+      font-weight: 600 !important;
+      font-size: 1.2rem !important;
+      letter-spacing: -.018rem !important;
+      line-height: 1.5rem !important;
+      opacity: 1 !important;
+      color: $color-white !important;
+   }
+
+   .mat-snack-bar-container span {
+      opacity: 1 !important;
+   }
+
+   .mat-simple-snackbar-action {
+      font-family: $default-font-family;
+      font-size: 1.2rem !important;
+      letter-spacing: -.018rem !important;
+      line-height: 1.5rem !important;
+      opacity: .7 !important;
+      transition: all $default-transition-duration !important;
+      color: $color-white !important;
+
+      &:hover {
+         opacity: 1 !important;
+      }
+
+      & .mat-button-wrapper {
+         font-weight: 600 !important;
+      }
+   }
+
+   /** ----- Specific options ----- */
+   .snackbar__success {
+      background-color: $color-primary !important;
+   }
+
+   .snackbar__bookmark {
+      background-color: $color-secondary !important;
+   }
+
+   .snackbar__error {
+      background-color: $color-error !important;
+   }
+
+   .snackbar__default {
+      background-color: #323232 !important;
+   }
+}

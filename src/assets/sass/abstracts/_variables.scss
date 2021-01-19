@@ -1,0 +1,130 @@
+/** -------------------- COLORS -------------------- */
+$color-primary: #45bf7e;
+$color-primary-darken: darken($color-primary, 5%);
+
+// Secondary colors
+$color-secondary: #3059cc;
+$color-secondary-darken: darken($color-secondary, 5%);
+$color-secondary-dark-1:#193CA5;
+$color-secondary-lighter: rgba(48, 89, 204, 0.5);
+$color-secondary-light: rgba(48, 89, 204, 0.1);
+$color-secondary-mat-tab-background: rgba(244, 246, 252, 0.5);
+
+// Error colors
+$color-error: #ff5b45;
+$color-error-darken: darken($color-error, 5%);
+
+// Yellow colors
+$color-yellow: #FBBA00;
+$color-yellow-dark-1: #FFBD41;
+
+// Yellow colors
+$color-red: #F13B1B;
+$color-red-darken: darken($color-red, 5%);
+
+// Purple colors
+$color-purple: #A228BA;
+$color-purple-darken: darken($color-purple, 5%);
+$color-purple-light-1: rgba(162, 40, 186, 0.1);
+
+// Youtube colors
+$color-youtube: #DD424B;
+$color-youtube-darken: darken($color-youtube, 5%);
+
+// Vimeo colors
+$color-vimeo: #1AB7EA;
+$color-vimeo-darken: darken($color-vimeo, 5%);
+
+// "Disabled" colors
+$color-disabled: #9B9B9B;
+$color-disabled-darken: darken($color-disabled, 5%);
+
+// Default grey colors
+$default-border-color-grey-dark: #4C4C4C;
+$default-color-grey: #4a4a4a;
+$default-color-grey-2: #9B9B9B;
+$default-color-grey-3: #4C4C4C;
+$default-color-grey-light: #e6e6e6;
+$default-header-color-grey: #4a4a4a;
+$default-border-color-grey-light: #e6e6e6;
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+$color-grey-light-3: #ddd;
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+$color-grey-dark-4: #979797;
+
+// Default navbar grey colors
+$default-sidebar-grey-color: #2F2F2F;
+
+// Blue background color
+$color-blue-light-1: #F4F6FC;
+
+// White colors
+$color-white: #fff;
+$color-white-ripple: rgba(255, 255, 255, 0.3);
+
+// Black colors
+$color-black: #000;
+$color-black-2: #181818;
+$color-black-3: #272727;
+
+
+/** -------------------- FONTS --------------------  */
+$default-font-family: 'Montserrat',
+sans-serif;
+$default-font-family-inputs: 'Lato',
+sans-serif;
+$default-font-size: 1.6rem;
+$default-button-font-size: 1.4rem;
+$default-input-font-size: 1.35rem;
+
+
+/** -------------------- ANIMATIONS -------------------- */
+$default-transition-duration: 0.2s;
+
+
+/** -------------------- BORDERS -------------------- */
+$default-border: 1px solid $default-border-color-grey-light;
+$default-border-radius: 4px;
+
+
+/** -------------------- BOX-SHADOWS -------------------- */
+// DO NOT USE THE BOX-SHADOWS YOU CAN SEE IN INVISION - ALL WRONG OR CHANGED...
+// You can use or edit these prepared variables
+
+// Default
+$default-box-shadow: 0 .5rem 1rem 0 rgba($color-black, .1);
+$default-box-shadow-hover: 0 .7rem 1.2rem 0 rgba($color-black, .15);
+
+// For big boxes
+$default-box-shadow-box: 0 .5rem 1rem 0 rgba($color-black, .1);
+
+// For smaller (normal) cards
+$default-box-shadow-card: $default-box-shadow;
+$default-box-shadow-card-hover: $default-box-shadow-hover;
+
+// For small logos or small images
+$default-box-shadow-small: 0 .4rem .8rem 0 rgba(230, 79, 90, .1),
+0 .8rem 1.7rem 0 rgba($color-black, .1);
+$default-box-shadow-small-hover: 0 0 1rem .1rem rgba(230, 79, 90, 0.1),
+0 0 1rem .2rem rgba($color-black, 0.15);
+
+// For Company images in mentions (only)
+$default-box-shadow-mention: $default-box-shadow;
+$default-box-shadow-mention-hover: $default-box-shadow-hover;
+
+// For Play icon (only)
+$default-box-shadow-play: 0 0 1rem .1rem rgba(230, 79, 90, 0.1),
+0 0 1rem .15rem rgba($color-black, 0.1);
+$default-box-shadow-play-hover: 0 0 1rem .1rem rgba(230, 79, 90, 0.1),
+0 0 1rem .2rem rgba($color-black, 0.2);
+
+// For buttons
+$default-box-shadow-button-hover: 0 .5rem 1rem 0 rgba($color-black, .1);
+$default-box-shadow-button-active: 0 .3rem .6rem 0 rgba($color-black, .1);
+
+
+/** -------------------- SIZES -------------------- */
+$navbar-height: 5rem;

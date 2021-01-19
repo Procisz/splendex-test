@@ -1,0 +1,18 @@
+@import "./../abstracts/variables";
+@import "./../abstracts/mixins";
+
+/** For pictures */
+.img-optimizer {
+   background-size: cover;
+   background-position: center center;
+   -o-object-fit: cover !important;
+   object-fit: cover !important;
+   -o-object-position: center;
+   object-position: center;
+}
+
+
+/** For Material Dialogs */
+.custom-dialog__no-padding .mat-dialog-container {
+   padding: 0;
+}

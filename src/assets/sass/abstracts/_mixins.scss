@@ -1,0 +1,186 @@
+@import "./variables";
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/** Parent element must be relative */
+@mixin FullCentering {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin imgOptimizer {
+  background-size: cover;
+  background-position: center center;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+/** ------------ This is for responsive querys ------------ 
+ * These querys are the same as the flex-layouts breakpoints.
+ * Media querys and names.
+ * 
+ * Querys zone          For what devices      Name of parameters
+ * 0 - 600px            Large Phone           phone, phone-first
+ * 600 - 960px          Tablet portrait       tab-port, tab-port-first
+ * 900 - 1280px         Tablet landscape      tab-land,tab-land-first
+ * [1280 - 1920px]      Normal styles         [No changes]
+ * 1920px +             Large desktops        desktopL
+ *  ----------------------------------------------------- */
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint==phone {
+    @media only screen and (max-width: 37.4375em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tab-port {
+    @media only screen and (max-width: 59.9375em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tab-land {
+    @media only screen and (max-width: 79.9375em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==big-desktop {
+    @media only screen and (min-width: 120em) {
+      @content;
+    }
+  }
+}
+
+
+/** ----------------------------- BUTTONS -----------------------------
+* You can use the following prepared buttons styles 
+ * btn__primary--rounded
+ * btn__secondary--rounded
+ * btn__error--rounded
+ * btn__disabled--rounded
+ * ----------------------------------------------------------------- */
+
+/** BUTTONS START */
+@mixin button($button-parameter) {
+  @if $button-parameter==btn {
+
+    &,
+    &:link,
+    &:visited {
+      font-family: $default-font-family;
+      font-size: $default-button-font-size;
+      font-weight: 600;
+      letter-spacing: -.034rem;
+      line-height: 1.8rem;
+      text-decoration: none;
+      transition: all .1s;
+      white-space: nowrap;
+
+      /** Changes for the <button> element */
+      cursor: pointer;
+      outline: none;
+    }
+  }
+
+  /** ----- Primary buttons configuration ----- */
+  @if $button-parameter==btn__primary--rounded {
+    border-radius: 16rem;
+    background-color: $color-primary;
+    color: $color-white;
+    border: 2px solid $color-primary;
+  }
+
+
+  /** ----- Secondary buttons configuration ----- */
+  @if $button-parameter==btn__secondary--rounded {
+    border-radius: 16rem;
+    background-color: $color-secondary;
+    color: $color-white;
+    border: 2px solid $color-secondary;
+  }
+
+
+  /** ----- Error buttons configuration ----- */
+  @if $button-parameter==btn__error--rounded {
+    border-radius: 16rem;
+    background-color: $color-error;
+    color: $color-white;
+    border: 2px solid $color-error;
+  }
+
+
+  /** Disabled buttons configuration */
+  @if $button-parameter==btn__disabled--rounded {
+    border-radius: 16rem;
+    background-color: $default-color-grey-light;
+    color: #9B9B9B;
+    border: 2px solid $default-color-grey-light;
+    font-weight: 600;
+    cursor: not-allowed;
+  }
+
+}
+
+/** BUTTONS END */
+
+
+/** BUTTON ANIMATIONS START */
+@mixin buttonAnimation($button-parameter) {
+
+  /** ---------- Default :hover and :active ---------- */
+  @if $button-parameter==btn-animation {
+    &:hover {
+      box-shadow: $default-box-shadow-button-hover;
+    }
+
+    &:active {
+      outline: none;
+      /* transform: translateY(.1rem);*/
+      box-shadow: $default-box-shadow-button-active;
+    }
+  }
+
+
+  /** ----- Primary buttons configuration ----- */
+  @if $button-parameter==btn-animation__primary--rounded {
+    &:hover {
+      background-color: $color-primary-darken;
+      color: $color-white;
+      border: 2px solid $color-primary-darken;
+    }
+
+    &:active {
+      background-color: $color-primary-darken;
+      color: $color-white;
+    }
+  }
+
+
+  /** ----- Secondary buttons configuration ----- */
+  @if $button-parameter==btn-animation__secondary--rounded {
+    &:hover {
+      background-color: $color-secondary-darken;
+      color: $color-white;
+      border: 2px solid $color-secondary-darken;
+    }
+
+    &:active {
+      background-color: $color-secondary-darken;
+      color: $color-white;
+    }
+  }
+}
+
+/** BUTTON ANIMATIONS END */

@@ -1,0 +1,39 @@
+@import "./../abstracts/variables";
+@import "./../abstracts/mixins";
+
+/** ----------------------------- BUTTONS -----------------------------
+* You can use the following prepared buttons styles 
+ * btn__primary--rounded
+ * btn__secondary--rounded
+ * btn__error--rounded
+ * btn__disabled--rounded
+ * ----------------------------------------------------------------- */
+
+.btn__primary--rounded {
+  @include button(btn);
+  @include button(btn__primary--rounded);
+  @include buttonAnimation(btn-animation);
+  @include buttonAnimation(btn-animation__primary);
+}
+
+.btn__secondary--rounded {
+  @include button(btn);
+  @include button(btn__secondary--rounded);
+  @include buttonAnimation(btn-animation);
+  @include buttonAnimation(btn-animation__secondary);
+}
+
+.btn__error--rounded {
+  @include button(btn);
+  @include button(btn__error--rounded);
+  @include buttonAnimation(btn-animation);
+  // @include buttonAnimation(btn-animation);
+  // @include buttonAnimation(btn-animation__error);
+}
+
+.btn__disabled--rounded {
+  @include button(btn);
+  @include button(btn__disabled--rounded);
+}
+
+/** BUTTONS STYLE END */

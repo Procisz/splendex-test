@@ -1,0 +1,175 @@
+@import "./../abstracts/mixins";
+@import "./../abstracts/variables";
+
+*,
+*::after,
+*::before {
+    outline: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    font-weight: 400;
+    line-height: 1.6;
+    box-sizing: border-box;
+    height: 100%;
+
+    /** ----- Desktop first ----- */
+    @include responsive(tab-land) {
+        font-size: 60%;
+    }
+
+    @include responsive(tab-port) {
+        font-size: 59%;
+    }
+
+    @include responsive(phone) {
+        font-size: 58%;
+    }
+
+    @include responsive(big-desktop) {
+        font-size: 70%;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $color-white;
+    height: 100%;
+    font-family: $default-font-family;
+}
+
+::-moz-selection {
+    background-color: $color-secondary;
+    color: $color-white;
+}
+
+::selection {
+    background-color: $color-secondary;
+    color: $color-white;
+}
+
+a,
+a:link,
+a:visited {
+    text-decoration: none !important;
+}
+
+li {
+    list-style: none;
+}
+
+.input--rounded,
+.input-select--rounded,
+.textarea--rounded,
+.input-datepicker--rounded,
+.checkbox--color-primary,
+.checkbox--color-secondary {
+    margin-bottom: 1rem;
+
+    @include responsive(tab-port) {
+        margin-bottom: 1.3rem;
+    }
+
+    @include responsive(phone) {
+        margin-bottom: 1.5rem;
+    }
+}
+
+mat-form-field,
+mat-select,
+textarea,
+mat-menu,
+.mat-menu-item {
+    font-family: $default-font-family !important;
+    color: $default-color-grey;
+    font-size: 1.4rem;
+    letter-spacing: 0;
+    line-height: 4rem;
+}
+
+mat-select,
+mat-option {
+    font-family: $default-font-family !important;
+    font-size: 1.3rem !important;
+    letter-spacing: -.018rem !important;
+    line-height: 1.5rem !important;
+
+    ::-webkit-scrollbar {
+        display: block;
+    }
+
+    &::-webkit-scrollbar {
+        display: block;
+    }
+}
+
+
+/* Placeholder overrides for Firefox */
+:-moz-placeholder,
+::-moz-placeholder {
+    color: #9B9B9B !important;
+    font-family: $default-font-family !important;
+    font-size: 1.2rem !important;
+    letter-spacing: -.018rem !important;
+    line-height: 1.5rem !important;
+}
+
+
+/* Placeholder overrides for Chrome/Opera/Safari*/
+::-webkit-input-placeholder {
+    color: #9B9B9B !important;
+    font-family: $default-font-family !important;
+    font-size: 1.2rem !important;
+    letter-spacing: -.018rem !important;
+    line-height: 1.5rem !important;
+}
+
+.mat-select-placeholder {
+    color: #9B9B9B !important;
+    font-family: $default-font-family !important;
+    font-size: 1.2rem !important;
+    letter-spacing: -.018rem !important;
+    line-height: 1.5rem !important;
+}
+
+
+/* Autofill overrides */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    transform: translateX(.3rem) !important;
+    margin: 0 !important;
+    font-family: $default-font-family !important;
+    font-size: 1.2rem !important;
+    letter-spacing: -.018rem !important;
+    line-height: 0 !important;
+    border: none !important;
+    white-space: nowrap !important;
+    -webkit-text-fill-color: $default-color-grey !important;
+    -webkit-transition: background-color 5000s ease-in-out 5s !important;
+    transition: background-color 5000s ease-in-out 5s !important;
+
+    &::-moz-selection {
+        background-color: $color-secondary;
+        -webkit-text-fill-color: $color-white;
+        color: $color-white;
+    }
+
+    &::selection {
+        background-color: $color-secondary;
+        -webkit-text-fill-color: $color-white;
+        color: $color-white;
+    }
+}

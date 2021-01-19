@@ -1,0 +1,33 @@
+@import './../abstracts/variables';
+
+/** Scrollbar */
+::-webkit-scrollbar {
+    -webkit-transition: $default-transition-duration !important;
+    transition: $default-transition-duration !important;
+    width: .6rem;
+    height: 0;
+    border-radius: 1rem !important;
+}
+
+/** Amiben a scrollbar test mozog - CHROME*/
+::-webkit-scrollbar-track {
+    border-radius: 1rem;
+    background-color: transparent;
+}
+
+// /** This is for firefox scrollbar */ // html {
+//     scrollbar-color: lighten($default-color-grey-2, 15%) transparent;
+// }
+
+/** Scrollbar teste */
+::-webkit-scrollbar-thumb {
+    background: lighten($default-color-grey-2, 15%);
+    border-radius: 1rem !important;
+    cursor: pointer;
+    -webkit-transition: $default-transition-duration !important;
+    transition: $default-transition-duration !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $default-color-grey-2;
+}
