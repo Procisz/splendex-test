@@ -1,20 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { GameComponent } from './pages/game/game.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'homepage'
+    redirectTo: 'landing'
   },
-  // {
-  //   path: 'homepage',
-  //   component: AppSignedInLayoutComponent,
-  //   loadChildren: () =>
-  //     import('../pages/landing/landing.module').then(
-  //       (m) => m.LandingModule
-  //     ),
-  // },
+  {
+    path: 'landing',
+    component: LandingComponent,
+  },
+  {
+    path: 'game',
+    component: GameComponent,
+  },
+  {
+    path: '**',
+    redirectTo: 'landing'
+  }
 ];
 
 @NgModule({
