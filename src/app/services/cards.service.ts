@@ -9,7 +9,7 @@ export class CardsService {
   public revertingDelay: number = 1000;
   public numberOfRotates: number = 0;
   public permissionToRotate: BehaviorSubject<boolean>;
-  public mockData: Array<MemoryCardModel> = [
+  public mockData: MemoryCardModel[] = [
     {
       id: 1,
       title: 'Card 1',
@@ -101,7 +101,18 @@ export class CardsService {
 
     setTimeout(() => {
       this.permissionToRotate.next(true);
+    }, 1000);
+  }
 
-    }, 5000);
+  public removeCardsFromDeck(cards: MemoryCardModel[]) {
+    cards.forEach(cardforRemove => {
+      this.mockData.forEach(cardList => {
+        if (cardforRemove.title === cardList.title) {
+          console.log(cardforRemove.title);
+          console.log(cardList.title);
+          this.mockData = this.mockData.filter(function (e) { return e.title !== cardforRemove.title })
+        }
+      })
+    })
   }
 }

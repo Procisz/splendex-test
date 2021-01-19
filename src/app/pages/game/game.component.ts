@@ -8,8 +8,8 @@ import { CardsService } from 'src/app/services/cards.service';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-  public cardList: Array<MemoryCardModel> = [];
-  private compareCardList: Array<MemoryCardModel> = [];
+  public cardList: MemoryCardModel[] = [];
+  private compareCardList: MemoryCardModel[] = [];
 
   constructor(private cardsSercice: CardsService) { }
 
@@ -21,11 +21,23 @@ export class GameComponent implements OnInit {
     })
   }
 
-  public compareCards(card: MemoryCardModel) {
+  public createArrayForCompare(card: MemoryCardModel) {
     if (!this.compareCardList.length) {
       this.compareCardList.push(card);
     }
 
-    console.log('this.compareCardList: ', this.compareCardList);
+    else if (this.compareCardList.length === 1) {
+      this.compareCardList.push(card);
+      this.compareCards();
+    }
+  }
+
+  private compareCards() {
+    if (this.compareCardList[0].title === this.compareCardList[0].title) {
+      this.cardsSercice.removeCardsFromDeck(this.compareCardList)
+    }
+    else {
+      this.compareCardList = [];
+    }
   }
 }

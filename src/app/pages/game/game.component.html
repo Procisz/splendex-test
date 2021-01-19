@@ -4,6 +4,6 @@
     </header>
 
     <main class="main-content">
-        <app-memory-card *ngFor="let item of cardList" [item]="item" (cardClick)="compareCards($event)"></app-memory-card>
+        <app-memory-card *ngFor="let item of cardList" [item]="item" (cardClick)="createArrayForCompare($event)"></app-memory-card>
     </main>
 </div>
